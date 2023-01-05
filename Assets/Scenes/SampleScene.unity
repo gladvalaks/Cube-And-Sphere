@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 1114464607}
   - component: {fileID: 1114464606}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,15 +330,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5abce57191cc469a8a5b98157c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextCubesLocation: '1111
+  TextCubesLocation: '11111
 
-    1001
+    10011
 
-    1001
+    10011
 
-    1101
+    11010
 
-    1111'
+    11110'
   cubePrefab: {fileID: 5737750312644887018, guid: 402a369d0b0d98e4386d54ec8dfcc5bd, type: 3}
 --- !u!4 &1114464607
 Transform:
