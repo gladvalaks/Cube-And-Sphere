@@ -7,12 +7,13 @@ public class SpawnCubes : MonoBehaviour
 {
     [TextArea]
     public string TextCubesLocation;
+    public CubeManager cubeManager;
     public GameObject cubePrefab;
     public GameObject playerPrefab;
 
     void Start()
     {
-       
+        cubeManager = GetComponent<CubeManager>();
         SpawnObjects();
     }
 
@@ -50,11 +51,16 @@ public class SpawnCubes : MonoBehaviour
                 else if(indexOfGameObject == 2)
                 {
                     obj = Instantiate(playerPrefab);
+                    cubeManager.cubesCount += 1;
                 }
                 if (indexOfGameObject != 0)
                 {
                     Undo.RegisterCreatedObjectUndo(obj,"Object");
                     obj.transform.position = new Vector3(-basePosX + j, 1, basePosY - i);
+                }
+                else
+                {
+                    cubeManager.cubesCount += 1;
                 }
             }
         }

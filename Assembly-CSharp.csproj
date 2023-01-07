@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\SpawnCubes.cs" />
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\CollorGround.cs" />
+    <Compile Include="Assets\Scripts\CubeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
