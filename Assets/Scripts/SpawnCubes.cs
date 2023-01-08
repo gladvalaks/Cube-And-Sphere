@@ -1,18 +1,25 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 public class SpawnCubes : MonoBehaviour
 {
+    
+    
     [TextArea]
     public string TextCubesLocation;
     public CubeManager cubeManager;
+    public LevelsScript levelsScript;
     public GameObject cubePrefab;
     public GameObject playerPrefab;
 
+
     void Start()
     {
+        levelsScript = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelsScript>();
+        TextCubesLocation = levelsScript.GetLevel();
         cubeManager = GetComponent<CubeManager>();
         SpawnObjects();
     }
@@ -22,7 +29,6 @@ public class SpawnCubes : MonoBehaviour
     {
         
     }
-    [ContextMenu("Spawn Objects")]
     void SpawnObjects()
     {
         List<string> cubes = new List<string>(TextCubesLocation.Split());
@@ -30,6 +36,7 @@ public class SpawnCubes : MonoBehaviour
         float basePosY = cubes.Count / 2f;
         for (int i = 0; i < cubes.Count; i++)
         {
+            Debug.Log(cubes[i]);
             for (int j = 0; j < cubes[0].Length; j++)
             {
                 GameObject cube = Instantiate(cubePrefab);
@@ -67,3 +74,4 @@ public class SpawnCubes : MonoBehaviour
         
     }
 }
+

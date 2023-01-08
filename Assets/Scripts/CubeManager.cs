@@ -6,10 +6,11 @@ using UnityEngine;
 public class CubeManager : MonoBehaviour
 {
     public int cubesCount = 0;
+    public LevelsScript LevelsScript;
 
     void Start()
     {
-
+        LevelsScript = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelsScript>();
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class CubeManager : MonoBehaviour
         cubesCount -= 1;
         if (cubesCount == 0)
         {
-            Debug.Log("Уровень пройден");
+            LevelsScript.GoToNextLevel();
         }
     }
 }
