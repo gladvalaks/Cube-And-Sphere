@@ -269,7 +269,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 16, z: -5}
+  m_LocalPosition: {x: -0.5, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -331,14 +331,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5abce57191cc469a8a5b98157c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataJson: {fileID: 4900000, guid: 72d0490a57ed7f744b13a0bf54f99d44, type: 3}
   TextCubesLocation: 1111111111 1000001111 1011111111 1000000001 1001111101 1001000101
     1000000101 1101011101 1121000001 1111111111
-  cubeManager: {fileID: 1114464608}
+  cubeManager: {fileID: 0}
+  levelsScript: {fileID: 0}
   cubePrefab: {fileID: 5737750312644887018, guid: 402a369d0b0d98e4386d54ec8dfcc5bd, type: 3}
   playerPrefab: {fileID: 8224009102171211050, guid: ac1f1d3781ad32147bf6a9660a48e58f, type: 3}
-  levelList:
-    levels: []
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1114464607
 Transform:
   m_ObjectHideFlags: 0
@@ -363,7 +362,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114464605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c254078e00355458e99a5b235a67f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d20fbbadd6f76847aec99dead3fc86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cubesCount: 0
+  LevelsScript: {fileID: 0}
