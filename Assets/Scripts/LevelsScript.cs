@@ -43,6 +43,11 @@ public class LevelsScript : MonoBehaviour
     {
         return levelList.levels[curentLevel].levelString;
     }
+    public Color GetColor()
+    {
+        var col = levelList.levels[curentLevel].color;
+        return new Color(col[0],col[1],col[2]);
+    }
     [ContextMenu("DeletePlayerPrefs")]
     public void deletePrefs()
     {
@@ -55,6 +60,7 @@ public class Level
 {
     public int levelId;
     public string levelString;
+    public int[] color;
 }
 [Serializable]
 public class LevelsList

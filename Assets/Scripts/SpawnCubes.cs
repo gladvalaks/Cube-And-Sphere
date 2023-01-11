@@ -14,12 +14,17 @@ public class SpawnCubes : MonoBehaviour
     public LevelsScript levelsScript;
     public GameObject cubePrefab;
     public GameObject playerPrefab;
+    public Color color;
 
-
-    void Start()
+    private void Awake()
     {
         levelsScript = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelsScript>();
+    }
+    void Start()
+    {
+        
         TextCubesLocation = levelsScript.GetLevel();
+        color = levelsScript.GetColor();
         cubeManager = GetComponent<CubeManager>();
         SpawnObjects();
     }
@@ -42,6 +47,7 @@ public class SpawnCubes : MonoBehaviour
                 GameObject cube = Instantiate(cubePrefab);
                 Undo.RegisterCreatedObjectUndo(cube, "Object");
                 cube.transform.position = new Vector3(-basePosX + j, 0, basePosY - i);
+                
             }
         }
         for (int i = 0; i < cubes.Count; i++)
@@ -53,7 +59,8 @@ public class SpawnCubes : MonoBehaviour
                 if (indexOfGameObject == 1)
                 {
                     obj = Instantiate(cubePrefab);
-                    
+                    obj.GetComponent<Renderer>().material.color = color;
+
                 }
                 else if(indexOfGameObject == 2)
                 {
