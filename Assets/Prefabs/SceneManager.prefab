@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706fc27baca3b504dad3f2a584958996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataJson: {fileID: 4900000, guid: 72d0490a57ed7f744b13a0bf54f99d44, type: 3}
+  dataJson: {fileID: 4900000, guid: a01b79c009d2d5141b955fa27a0e655d, type: 3}
   levelList:
     levels: []
   curentLevel: 0

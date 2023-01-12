@@ -12,15 +12,15 @@ public class LevelsScript : MonoBehaviour
 
     void Awake()
     {
-        if (!PlayerPrefs.HasKey("Level"))
+        
+        if (!PlayerPrefs.HasKey("MaxLevel"))
         {
-            PlayerPrefs.SetInt("Level", 0);
+            PlayerPrefs.SetInt("MaxLevel", 0);
         }
         curentLevel = PlayerPrefs.GetInt("Level");
-        Debug.Log(curentLevel);
         levelList = JsonUtility.FromJson<LevelsList>(dataJson.text);
         DontDestroyOnLoad(this.gameObject);
-        GoToGame();
+        
     }
     // Update is called once per frame
     void Update()
@@ -35,16 +35,30 @@ public class LevelsScript : MonoBehaviour
         PlayerPrefs.SetInt("Level", level);
         GoToGame();
     }
+    public void GoToCurrentLevel(int lvl)
+    {
+        curentLevel = lvl;
+        GoToGame();
+    }
     public void GoToGame()
     {
+        if (PlayerPrefs.GetInt("MaxLevel") < curentLevel)
+        {
+            PlayerPrefs.SetInt("MaxLevel", curentLevel);
+        }
         SceneManager.LoadScene("GameScene");
     }
     public string GetLevel()
     {
         return levelList.levels[curentLevel].levelString;
     }
+    public Color GetColor()
+    {
+        var col = levelList.levels[curentLevel].color;
+        return new Color(col[0], col[1], col[2]);
+    }
     [ContextMenu("DeletePlayerPrefs")]
-    public void deletePrefs()
+    public void DeletePrefs()
     {
         PlayerPrefs.DeleteAll();
     }
@@ -55,6 +69,7 @@ public class Level
 {
     public int levelId;
     public string levelString;
+    public int[] color;
 }
 [Serializable]
 public class LevelsList
