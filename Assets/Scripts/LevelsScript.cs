@@ -12,10 +12,7 @@ public class LevelsScript : MonoBehaviour
 
     void Awake()
     {
-<<<<<<< HEAD
         
-=======
->>>>>>> 57710bb2b159bcfc9526e54de4d258ff82b490e8
         if (!PlayerPrefs.HasKey("MaxLevel"))
         {
             PlayerPrefs.SetInt("MaxLevel", 0);
@@ -58,11 +55,7 @@ public class LevelsScript : MonoBehaviour
     public Color GetColor()
     {
         var col = levelList.levels[curentLevel].color;
-<<<<<<< HEAD
         return new Color(col[0], col[1], col[2]);
-=======
-        return new Color(col[0],col[1],col[2]);
->>>>>>> 57710bb2b159bcfc9526e54de4d258ff82b490e8
     }
     [ContextMenu("DeletePlayerPrefs")]
     public void DeletePrefs()

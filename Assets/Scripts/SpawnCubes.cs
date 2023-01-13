@@ -41,6 +41,7 @@ public class SpawnCubes : MonoBehaviour
         float basePosY = cubes.Count / 2f;
         for (int i = 0; i < cubes.Count; i++)
         {
+            Debug.Log(cubes[i]);
             for (int j = 0; j < cubes[0].Length; j++)
             {
                 GameObject cube = Instantiate(cubePrefab);

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7973306117073109315}
-  - component: {fileID: 7524499856840930327}
+  - component: {fileID: 3373279067007728353}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: LevelManager
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7524499856840930327
+--- !u!114 &3373279067007728353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783412129515767397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7b07128efae5343914ace922c3a4e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 706fc27baca3b504dad3f2a584958996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dataJson: {fileID: 4900000, guid: a01b79c009d2d5141b955fa27a0e655d, type: 3}
