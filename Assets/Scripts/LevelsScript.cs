@@ -35,7 +35,8 @@ public class LevelsScript : MonoBehaviour
     }
     public void GoToCurrentLevel(int lvl)
     {
-        curentLevel = lvl;
+        curentLevel = lvl-1;
+        PlayerPrefs.SetInt("Level", curentLevel);
         GoToGame();
     }
     public void GoToGame()
