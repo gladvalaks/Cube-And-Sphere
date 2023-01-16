@@ -54,7 +54,7 @@ public class LevelsScript : MonoBehaviour
     public Color GetColor()
     {
         var col = levelList.levels[curentLevel].color;
-        return new Color(col[0],col[1],col[2]);
+        return new Color(col[0]/255f,col[1]/255f,col[2]/255f,col[3]/255f);
     }
     [ContextMenu("DeletePlayerPrefs")]
     public void DeletePrefs()

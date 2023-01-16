@@ -9,8 +9,11 @@ public class BallController : MonoBehaviour
     private Vector2 _firstPos;
     private Vector2 _secondPos;
     public Vector2 _currentPos;
-
+    public Vector3 movement;
+    public GameObject moveToBlock = null;
+    public bool isMoving = false;
     public float _speed;
+    public Vector3 previousTransform;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,12 +22,19 @@ public class BallController : MonoBehaviour
 
     void Update()
     {
-        Swipe();
+        Vector3 positionNow = this.transform.position;
+        if (Mathf.Abs(positionNow.magnitude - previousTransform.magnitude)<0.02f)
+        {
+            Swipe();
+        }
+        Move();
+        previousTransform = positionNow;
     }
 
 
     private void Swipe()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             _firstPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -40,29 +50,33 @@ public class BallController : MonoBehaviour
                 _secondPos.y - _firstPos.y
             );
         }
+
         _currentPos.Normalize();
 
         if (_currentPos.y < 0 && _currentPos.x > -0.5f && _currentPos.x < 0.5f)
         {
             //  Back
-            rb.velocity = Vector3.back * _speed;
+            movement = Vector3.back;
         }
         else if (_currentPos.y > 0 && _currentPos.x > -0.5f && _currentPos.x < 0.5f)
         {
             // Forward
-            rb.velocity = Vector3.forward * _speed;
+            movement = Vector3.forward;
         }
         else if (_currentPos.x < 0 && _currentPos.y > -0.5f && _currentPos.y < 0.5f)
         {
             // Left 
-            rb.velocity = Vector3.left * _speed;
+            movement = Vector3.left;
         }
         else if (_currentPos.x > 0 && _currentPos.y > -0.5f && _currentPos.y < 0.5f)
         {
             // Right
-            rb.velocity = Vector3.right * _speed;
+            movement = Vector3.right;
         }
-
+    }
+    void Move()
+    {
+        rb.velocity = movement * _speed;
     }
 
 }

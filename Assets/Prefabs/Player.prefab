@@ -113,7 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentPos: {x: 0, y: 0}
-  _speed: 5
+  movement: {x: 0, y: 0, z: 0}
+  moveToBlock: {fileID: 0}
+  isMoving: 0
+  _speed: 10
+  previousTransform: {x: 0, y: 0, z: 0}
 --- !u!114 &5366895876232341442
 MonoBehaviour:
   m_ObjectHideFlags: 0

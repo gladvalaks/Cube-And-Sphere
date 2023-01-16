@@ -42,6 +42,7 @@ public class SpawnCubes : MonoBehaviour
         float basePosX = cubes[0].Length / 2f;
         float basePosY = cubes.Count / 2f;
         cameraScript.SetCameraSize(basePosX * 2);
+        SpawnEdges(basePosX, basePosY);
         for (int i = 0; i < cubes.Count; i++)
         {
             for (int j = 0; j < cubes[0].Length; j++)
@@ -76,6 +77,25 @@ public class SpawnCubes : MonoBehaviour
         }
         this.transform.position = new Vector3 (0,1,-0.5f);
 
+    }
+    void SpawnEdges(float x, float y)
+    {
+        GameObject _leftEdje = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        _leftEdje.transform.localScale = new Vector3(50, 1, y * 2);
+        _leftEdje.transform.position = new Vector3(-25 - x, 2, 0);
+        _leftEdje.GetComponent<Renderer>().material.color = color;
+        GameObject _rightEdje = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        _rightEdje.transform.localScale = new Vector3(50, 1, y * 2);
+        _rightEdje.transform.position = new Vector3(25 + x-0.5f, 2, 0);
+        _rightEdje.GetComponent<Renderer>().material.color = color;
+        GameObject _upEdje = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        _upEdje.transform.localScale = new Vector3(50, 1, y * 2);
+        _upEdje.transform.position = new Vector3(0, 2, y*2);
+        _upEdje.GetComponent<Renderer>().material.color = color;
+        GameObject _downEdje = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        _downEdje.transform.localScale = new Vector3(50, 1, y * 2);
+        _downEdje.transform.position = new Vector3(0, 2, -y * 2);
+        _downEdje.GetComponent<Renderer>().material.color = color;
     }
 }
 

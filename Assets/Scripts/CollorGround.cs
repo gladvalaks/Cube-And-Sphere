@@ -11,6 +11,7 @@ public class CollorGround : MonoBehaviour
     
     void Start()
     {
+        groundColor = RandomColor();
         cubeManager = GameObject.FindGameObjectWithTag("CubeManager").GetComponent<CubeManager>();
     }
 
@@ -22,10 +23,14 @@ public class CollorGround : MonoBehaviour
         {
             if (hit.transform.gameObject.GetComponent<Renderer>().material.color != groundColor)
             {
-                hit.transform.gameObject.GetComponent<Renderer>().material.SetColor("_Color", groundColor);
+                hit.transform.gameObject.GetComponent<Renderer>().material.color = groundColor;
                 cubeManager.CubeCollored();
             }
         }
        
+    }
+    Color RandomColor()
+    {
+        return new Color(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 0f);
     }
 }
