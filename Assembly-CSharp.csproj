@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SpawnCubes.cs" />
+    <Compile Include="Assets\Scripts\CubeManager.cs" />
+    <Compile Include="Assets\Scripts\CollorGround.cs" />
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\LevelsScript.cs" />
-    <Compile Include="Assets\Scripts\CollorGround.cs" />
-    <Compile Include="Assets\Scripts\CubeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\data.txt" />
